@@ -39,6 +39,7 @@ public class User {
     }
 
     public static void loginUser(){
+        System.out.println();
         System.out.println("Please Login");
         String username = take_username();
         String password = take_password();
