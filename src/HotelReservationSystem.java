@@ -313,7 +313,20 @@ public class HotelReservationSystem {
             for (Room room : hotel.getRooms()) {
                 if (room.getCategory().equals(selectedCategory) && room.isRoomAvailable()) {
                     System.out.println("Enter Payment");
-                    double amount = sc.nextDouble();
+                    double amount=0;
+                    while (true) {
+                    	 try {
+                    		 amount = sc.nextDouble();
+                    		 if(amount>=0) {
+                    			 break;
+                    		 }
+						} catch (Exception e) {
+							System.out.println("payment shoule be in numbers");
+							sc.next();
+						}
+                    	
+						
+					}
                     boolean paymentDone = makePayment(amount, room.getRoomPricePerDay());
                     while (!paymentDone) {
                         System.out.println("Enter Payment");
